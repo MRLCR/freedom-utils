@@ -1,15 +1,27 @@
-function shellSort(arr) {
+/**
+ * 希尔排序
+ * @param {Array} arr 待排序的数组
+ * @returns {Array}
+ */
+export function shellSort(arr) {
   const len = arr.length;
-  for (let gap = Math.floor(len / 2); gap > 0; gap = Math.floor(gap / 2)) {
+  const getGap = (num) => Math.floor(num / 2);
+
+  for (let gap = getGap(len); gap > 0; gap = getGap(gap)) {
+
     for (let i = gap; i < len; i++) {
-      let j = i;
       const current = arr[i];
+      let j = i;
+
       while (j - gap >= 0 && current < arr[j - gap]) {
         arr[j] = arr[j - gap];
         j = j - gap;
       }
+
       arr[j] = current;
     }
+
   }
+
   return arr;
 }
