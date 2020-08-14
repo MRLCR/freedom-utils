@@ -1,4 +1,10 @@
-function merge(left, right) {
+/**
+ * 两个数组归并操作
+ * @param {Array} left 
+ * @param {Array} right 
+ * @returns {Array}
+ */
+export function merge(left, right) {
   const result = [];
 
   while (left.length > 0 && right.length > 0) {
@@ -20,7 +26,12 @@ function merge(left, right) {
   return result;
 }
 
-function mergeSort(arr) {
+/**
+ * 二路归并排序
+ * @param {Array} arr 待排序的数组
+ * @param {Array}
+ */
+export function mergeSort(arr) {
   const len = arr.length;
   if (len < 2) {
     return arr;
@@ -30,5 +41,3 @@ function mergeSort(arr) {
   const right = arr.slice(middle);
   return merge(mergeSort(left), mergeSort(right));
 }
-
-module.exports = mergeSort;

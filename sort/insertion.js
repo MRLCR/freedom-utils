@@ -1,6 +1,12 @@
-function insertionSort(arr) {
+/**
+ * 简单插入排序
+ * @param {Array} arr 待排序的数组
+ * @returns {Array}
+ */
+export function insertionSort(arr) {
   const len = arr.length;
   let preIndex, current;
+
   for(let i = 1; i < len; i++) {
       preIndex = i - 1;
       current = arr[i];
@@ -10,7 +16,6 @@ function insertionSort(arr) {
       }
       arr[preIndex + 1] = current;
   }
+
   return arr;
 }
-
-module.exports = insertionSort;
