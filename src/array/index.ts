@@ -3,7 +3,7 @@
  * @param arr 目标数
  * @param deep 扁平化深度 默认 0： 全部
  */
-function flatten(arr: any[], deep = 0): any[] {
+export function flatten(arr: any[], deep = 0): any[] {
 
   // 如果是高版本 直接调用
   if (arr.flat) {
