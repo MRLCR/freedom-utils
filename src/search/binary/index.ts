@@ -1,12 +1,9 @@
 /**
  * 二分查找
- * @param {Array} arr 待搜索的数组
- * @param {number} target 目标数
- * @returns {num}
  */
-function binarySearch(arr, target) {
+function binarySearch(arr: number[] | string[], target: number | string): number {
   if (!Array.isArray(arr)) {
-    return -1
+    return -1;
   }
 
   let left = 0;
