@@ -4,23 +4,22 @@
  * @param {Array} right 
  * @returns {Array}
  */
-export function merge(left, right) {
-  const result = [];
+function merge(left: number[], right: number[]): number[] {
+  const result: number[] = [];
 
   while (left.length > 0 && right.length > 0) {
-    if (left[0] <= right[0]) {
-      result.push(left.shift());
-    } else {
-      result.push(right.shift());
-    }
+    const num = left[0] <= right[0] ? left.shift() : right.shift();
+    num && result.push(num);
   }
 
   while (left.length) {
-    result.push(left.shift());
+    const num = left.shift();
+    num && result.push();
   }
 
   while (right.length) {
-    result.push(right.shift());
+    const num = right.shift();
+    num && result.push(num);
   }
 
   return result;
@@ -28,10 +27,8 @@ export function merge(left, right) {
 
 /**
  * 二路归并排序
- * @param {Array} arr 待排序的数组
- * @param {Array}
  */
-export function mergeSort(arr) {
+function mergeSort(arr: number[]): number[] {
   const len = arr.length;
   if (len < 2) {
     return arr;
@@ -41,3 +38,5 @@ export function mergeSort(arr) {
   const right = arr.slice(middle);
   return merge(mergeSort(left), mergeSort(right));
 }
+
+export default mergeSort;

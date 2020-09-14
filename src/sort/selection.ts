@@ -1,11 +1,9 @@
 /**
  * 选择排序
- * @param {Array} arr 待排序的数组
- * @returns {Array}
  */
-export function selectionSort(arr) {
+export function selectionSort(arr: number[]) {
   const len = arr.length;
-  const swap = (i, j) => [arr[i], arr[j]] = [arr[j], arr[i]];
+  const swap = (i: number, j: number) => [arr[i], arr[j]] = [arr[j], arr[i]];
 
   let minIndex = 0;
 
