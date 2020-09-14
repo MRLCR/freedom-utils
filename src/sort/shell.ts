@@ -1,11 +1,9 @@
 /**
  * 希尔排序
- * @param {Array} arr 待排序的数组
- * @returns {Array}
  */
-export function shellSort(arr) {
+export function shellSort(arr: number[]) {
   const len = arr.length;
-  const getGap = (num) => Math.floor(num / 2);
+  const getGap = (num: number): number => Math.floor(num / 2);
 
   for (let gap = getGap(len); gap > 0; gap = getGap(gap)) {
 

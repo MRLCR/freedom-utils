@@ -1,0 +1,28 @@
+{
+  "name": "freedom-utils",
+  "version": "1.0.0",
+  "description": "暂时就是堆放一些工具函数的杂物间",
+  "main": "lib/index.js",
+  "scripts": {
+    "lib": "npm run clear && npx tsc",
+    "clear": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MRLCR/freedom-utils.git"
+  },
+  "keywords": [
+    "freedom",
+    "utils"
+  ],
+  "author": "xiamu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MRLCR/freedom-utils/issues"
+  },
+  "homepage": "https://github.com/MRLCR/freedom-utils#readme",
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^4.0.2"
+  }
+}

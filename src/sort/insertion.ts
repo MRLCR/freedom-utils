@@ -1,9 +1,7 @@
 /**
  * 简单插入排序
- * @param {Array} arr 待排序的数组
- * @returns {Array}
  */
-export function insertionSort(arr) {
+function insertionSort(arr: number[]) {
   const len = arr.length;
   let preIndex, current;
 
@@ -19,3 +17,5 @@ export function insertionSort(arr) {
 
   return arr;
 }
+
+export default insertionSort;
