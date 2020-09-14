@@ -6,6 +6,11 @@
  */
 function flatten(arr, deep = 0) {
 
+  // 如果是高版本 直接调用
+  if (Array.prototype.flat) {
+    return arr.flat(deep);
+  }
+
   const _flatten = (originArr, curDeep = 0) => {
     if (!Array.isArray(originArr)) {
       return [originArr];
