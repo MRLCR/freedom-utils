@@ -1,7 +1,7 @@
 /**
  * 希尔排序
  */
-export function shellSort(arr: number[]) {
+function shellSort(arr: number[]) {
   const len = arr.length;
   const getGap = (num: number): number => Math.floor(num / 2);
 
@@ -23,3 +23,5 @@ export function shellSort(arr: number[]) {
 
   return arr;
 }
+
+export default shellSort;
