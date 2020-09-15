@@ -1,7 +1,7 @@
 /**
  * 选择排序
  */
-export function selectionSort(arr: number[]) {
+function selectionSort(arr: number[]) {
   const len = arr.length;
   const swap = (i: number, j: number) => [arr[i], arr[j]] = [arr[j], arr[i]];
 
@@ -22,3 +22,5 @@ export function selectionSort(arr: number[]) {
 
   return arr;
 }
+
+export default selectionSort;
