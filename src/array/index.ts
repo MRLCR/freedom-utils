@@ -4,9 +4,13 @@
  * @param deep 扁平化深度 默认 0： 全部
  */
 export function flatten(arr: any[], deep = 0): any[] {
+  // 非数组对象
+  if (!Array.isArray(arr)) {
+    return [arr];
+  }
 
   // 如果是高版本 直接调用
-  if (arr.flat) {
+  if (arr.flat && typeof arr.flat === 'function') {
     return arr.flat(deep);
   }
 
