@@ -6,12 +6,14 @@
  */
 function throttle(fn: () => any, interval: number = 300): () => any {
   let canRun = true;
-  return function (...args: []) {
+  return function (...args: any[]) {
       if (!canRun) return;
       canRun = false;
       setTimeout(() => {
-          fn.apply(null, args);
+          fn.apply<any, any>(args);
           canRun = true;
       }, interval);
   };
 }
+
+export default throttle;
