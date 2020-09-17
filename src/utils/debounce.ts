@@ -5,7 +5,7 @@
  * @returns
  */
 function debounce(fn: () => any, interval: number = 300): () => any {
-  let timeout: number;
+  let timeout: NodeJS.Timeout;
   return function (...args: []) {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
