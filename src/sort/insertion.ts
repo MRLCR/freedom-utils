@@ -1,7 +1,9 @@
+import { Sort } from './types/index';
+
 /**
  * 简单插入排序
  */
-function insertionSort(arr: number[]) {
+const insertionSort: Sort = function(arr) {
   const len = arr.length;
   let preIndex, current;
 

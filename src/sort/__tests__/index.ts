@@ -4,22 +4,8 @@ import merge from '../merge';
 import quick from '../quick';
 import selection from '../selection';
 import shell from '../shell';
-
-interface Sort {
-  (arr: number[]): number[];
-}
-
-const createRandNumArr = (len: number = 30, max: number = 1000): number[] => {
-  const res: number[] = [];
-
-  const randomNum = (): number => Math.floor(Math.random() * max);
-
-  for(let i = 0; i < len; i++) {
-    res[i] = randomNum();
-  }
-
-  return res;
-}
+import { createRandNumArr } from '../../../tests/helper';
+import { Sort } from '../types';
 
 const isSorted = (arr: number[]) => arr.every((item, index) => index === 0 || item >= arr[index]);
 

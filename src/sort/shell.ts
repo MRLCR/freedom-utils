@@ -1,7 +1,9 @@
+import { Sort } from './types/index'
+
 /**
  * 希尔排序
  */
-function shellSort(arr: number[]) {
+const shellSort: Sort = function(arr: number[]) {
   const len = arr.length;
   const getGap = (num: number): number => Math.floor(num / 2);
 

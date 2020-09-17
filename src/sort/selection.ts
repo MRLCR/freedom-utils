@@ -1,7 +1,9 @@
+import { Sort } from './types/index';
+
 /**
  * 选择排序
  */
-function selectionSort(arr: number[]) {
+const selectionSort: Sort = function(arr) {
   const len = arr.length;
   const swap = (i: number, j: number) => [arr[i], arr[j]] = [arr[j], arr[i]];
 

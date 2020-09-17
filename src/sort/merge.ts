@@ -1,3 +1,5 @@
+import { Sort } from './types/index';
+
 /**
  * 两个数组归并操作
  * @param {Array} left 
@@ -28,7 +30,7 @@ function merge(left: number[], right: number[]): number[] {
 /**
  * 二路归并排序
  */
-function mergeSort(arr: number[]): number[] {
+const mergeSort: Sort = function(arr) {
   const len = arr.length;
   if (len < 2) {
     return arr;
