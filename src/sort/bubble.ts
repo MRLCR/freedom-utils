@@ -1,7 +1,9 @@
+import { Sort } from './types/index';
+
 /**
  * 冒泡排序
  */
-function bubbleSort(arr: number[]): number[] {
+const bubbleSort: Sort = function(arr) {
   const len = arr.length;
   const swap = (i: number, j: number) => [arr[i], arr[j]] = [arr[j], arr[i]];
 
