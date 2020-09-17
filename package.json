@@ -7,7 +7,7 @@
     "lib": "npm run clear:lib && tsc",
     "clear:lib": "rimraf lib",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:cov": "jest --coverage"
   },
   "repository": {
     "type": "git",
