@@ -5,13 +5,13 @@
  * @returns
  */
 function debounce(fn: () => any, interval: number = 300): () => any {
-  let timeout: number;
-  return function (...args: []) {
+  let timeout: NodeJS.Timeout;
+
+  return function (...args: any[]) {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
-      fn.apply(null, args);
+      fn.apply<any, any>(args);
     }, interval);
-
   };
 }
 

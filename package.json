@@ -4,9 +4,10 @@
   "description": "暂时就是堆放一些工具函数的杂物间",
   "main": "lib/index.js",
   "scripts": {
-    "lib": "npm run clear && npx tsc",
-    "clear": "rimraf dist",
-    "test": "jest"
+    "lib": "npm run clear:lib && tsc",
+    "clear:lib": "rimraf lib",
+    "test": "jest",
+    "test:cov": "jest --coverage"
   },
   "repository": {
     "type": "git",

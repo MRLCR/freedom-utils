@@ -6,6 +6,7 @@ interface UrlQuery {
 interface ParseUrl {
   path: string;
   query: UrlQuery;
+  protocol?: string;
 }
 
 interface UrlInterface {
@@ -28,12 +29,43 @@ class Url implements UrlInterface {
     return Url.parse(this._url);
   }
 
+  /**
+   * 是否包含请求协议
+   * @param url 路由
+   */
+  static includeProtocol(url: string): boolean {
+    return /^https?:\/\/(.*)/.test(url);
+  }
+
+  /**
+   * 解析路由
+   * @param url 路由
+   */
   static parse(url: string): ParseUrl {
+    if (url === '') {
+      throw Error('Illegality url');
+    }
+
+    let _url: string;
+
+    if (Url.includeProtocol(url)) {
+      const match = url.match(/^https?:\/\/(.*)/);
+
+      if (!match) {
+        throw Error('Illegality url');
+      }
+
+      _url = match[1];
+    } else {
+      _url = url;
+    }
+
     const res: ParseUrl = { path: '', query: {} };
-    const query = url.split("?")[1];
+    const [path, query] = _url.split("?");
+
+    res.path = path;
 
     if (!query) {
-      res.path = url;
       return res;
     }
 
