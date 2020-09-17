@@ -1,7 +1,9 @@
+import { Search } from './types/index';
+
 /**
- * 二分查找
+ * 二分查找 有序数组
  */
-function binarySearch(arr: number[] | string[], target: number | string): number {
+const binarySearch: Search = function(arr, target) {
   if (!Array.isArray(arr)) {
     return -1;
   }
@@ -26,3 +28,5 @@ function binarySearch(arr: number[] | string[], target: number | string): number
 
   return -1;
 }
+
+export default binarySearch;
